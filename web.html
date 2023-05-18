@@ -1,0 +1,167 @@
+<head>
+
+    <body>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+             :root {
+                --animOpacity-variable: 0;
+                --animContrast-variable: 80%;
+                --dot-size: 3px;
+            }
+            
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-shadow: 1px 1px 1px white, 1px -1px 1px white, -1px 1px 1px white, -1px -1px 1px white;
+            }
+            
+            html,
+            body {
+                overscroll-behavior-x: none;
+                overscroll-behavior-y: none;
+            }
+            
+            body {
+                color: #0b0b27;
+                position: relative;
+                font-family: "Permanent Marker", serif;
+                font-size: max(20px, 5vw);
+            }
+            
+            section {
+                display: flex;
+                flex-flow: wrap;
+                justify-content: space-around;
+                align-items: center;
+                min-height: 5vh;
+                z-index: 1;
+            }
+            
+            h1 {
+                font-family: "Permanent Marker", serif;
+                color: #ff007f;
+                font-size: 10vw;
+                font-weight: 600;
+                margin: 3vw 0;
+                text-align: center;
+            }
+            
+            a {
+                color: #007fff;
+            }
+            
+            p {
+                margin: 2rem 0;
+                padding: 0 8vw;
+                line-height: 1.5;
+                min-height: 5vh;
+                z-index: 1;
+            }
+            
+            section:not(#thanks) p:first-letter {
+                font-size: 3rem;
+                font-weight: 600;
+                line-height: 1.2;
+                /*
+              color: slategray;
+              margin: 0 1rem 0.3rem 0;
+              font-family: "Fleur De Leah", serif;
+              -webkit-initial-letter: 3;
+              initial-letter: 3;
+            */
+            }
+            
+            #thanks {
+                text-align: center;
+            }
+            
+            #thanks p {
+                min-height: auto;
+            }
+            
+            .parent {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: -1;
+                filter: contrast(var(--animContrast-variable));
+            }
+            
+            .bg {
+                z-index: -1;
+                -moz-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                pointer-events: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-position: center;
+            }
+            
+            .img2 {
+                background-image: url(https://cdn.pixabay.com/photo/2016/09/04/12/05/sunflower-1643794_1280.jpg);
+                background-size: cover;
+                /*
+              filter: grayscale(1) brightness(var(--photo-brightness))
+                contrast(var(--photo-contrast));
+            
+                filter: contrast(120%);
+            */
+                mix-blend-mode: lighten;
+            }
+        </style>
+        <script>
+            window.onload = function() {
+                "use strict";
+                // scroll filter
+                let height = 0;
+                document.addEventListener("scroll", function() {
+                    height = document.body.clientHeight;
+                    height -= window.innerHeight;
+                    let scrollAmount = window.pageYOffset;
+                    scrollAmount = scrollAmount / height;
+                    document.documentElement.style.setProperty(
+                        "--animOpacity-variable",
+                        scrollAmount
+                    );
+                    document.documentElement.style.setProperty(
+                        "--animContrast-variable",
+                        scrollAmount * 200 + 80 + "%"
+                    );
+                });
+                window.addEventListener("resize", function() {
+                    height = document.body.clientHeight;
+                    height -= window.innerHeight;
+                });
+            };
+        </script>
+        <div class="parent">
+
+            <div class="bg img2"></div>
+        </div>
+        <section>
+            <h1>Bienenportal</h1>
+        </section>
+        <section>
+            <p>Willkommen im Bienenportal</p>
+            <p>Informationen über Honigbiene</p>
+            <p> Honigbiene (Apis mellifera): Honigbienen sind soziale Insekten, die in großen Kolonien leben, die aus einer Königin, Arbeiterinnen und Drohnen bestehen. Sie sind weltweit verbreitet und werden für die Bestäubung von Nutzpflanzen und die Honigproduktion
+                geschätzt. Honigbienen kommunizieren mithilfe des sogenannten Bienentanzes, um anderen Bienen die Lage von Nahrungsquellen mitzuteilen. Die von Honigbienen produzierten Waben sind ein erstaunliches Beispiel für die Organisation und den
+                sozialen Zusammenhalt einer Kolonie.</p>
+        </section>
+        <section id="thanks">
+            <div>
+                <h2>Danke für Ihren Besuch</h2>
+
+
+            </div>
+        </section>
+    </body>
+</head>
