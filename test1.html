@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2017/07/19/17/16/flower-2519771_1280.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 15px;
+        }
+        
+        .box {
+            width: 13em;
+            height: 10em;
+            background-color: Plum;
+            border: 5px dashed black;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+        
+        .test {
+            background-clip: border-box;
+            height: auto;
+            overflow: auto;
+        }
+        
+        .test2 {
+            background-clip: padding-box;
+            height: auto;
+            overflow: auto;
+        }
+        
+        .test3 {
+            background-clip: content-box;
+            height: auto;
+            overflow: auto;
+        }
+        
+        h1,
+        h2,
+        p {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box test">
+            <h1>Willkommen im Bienenportal</h1>
+        </div>
+        <div class="box test2">
+            <h2>Informationen über Honigbiene</h2>
+        </div>
+        <div class="box test3">
+            <p>
+                Honigbiene (Apis mellifera): Honigbienen sind soziale Insekten, die in großen Kolonien leben, die aus einer Königin, Arbeiterinnen und Drohnen bestehen. Sie sind weltweit verbreitet und werden für die Bestäubung von Nutzpflanzen und die Honigproduktion
+                geschätzt. Honigbienen kommunizieren mithilfe des sogenannten Bienentanzes, um anderen Bienen die Lage von Nahrungsquellen mitzuteilen. Die von Honigbienen produzierten Waben sind ein erstaunliches Beispiel für die Organisation und den
+                sozialen Zusammenhalt einer Kolonie.
+            </p>
+        </div>
+        <form action="test1.html" method="POST">
+
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
